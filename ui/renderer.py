@@ -21,7 +21,7 @@ class Renderer:
     def draw_drivers(self, drivers):
         for driver in drivers:
             # Draw Driver Dot
-            pygame.draw.circle(self.screen, config.BLUE, (int(driver.x), int(driver.y)), 10)
+            pygame.draw.circle(self.screen, config.BLUE, (int(driver.x), int(driver.y)), 8)
 
             # 1. DRAW REJECTED PATHS (Thin Red Lines)
             # Use a safety check > 1 to prevent crashes
@@ -33,6 +33,6 @@ class Renderer:
                 pygame.draw.lines(self.screen, config.GREEN, False, driver.current_path, 5)
 
     def draw_rider(self, rider):
-        pygame.draw.circle(self.screen, config.GREEN, (rider.x, rider.y), 10)
+        pygame.draw.circle(self.screen, config.GREEN, (rider.x, rider.y), 8)
         text = self.font.render("Rider", True, config.BLACK)
         self.screen.blit(text, (rider.x + 15, rider.y))
